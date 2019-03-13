@@ -22,11 +22,7 @@ class TranslateController extends Controller {
         $numeral_keys = array_keys($numeral);
         if ($digit != null){
             if ($digit < 10 && $digit >= 0){
-                for ($i = 0; $i < 10; $i++) {
-                    if($digit == $numeral_keys[$i]){
-                        $digit = $numeral[$i];
-                    }
-                }
+                return $this->render('translate', ['digit' => $numeral[$digit]]);
             }
             else {
                 $digit = 'присвойте значение не меньше нуля и не больше 9';
